@@ -31,7 +31,11 @@
             android:name=".ToolsActivity"
             android:label="工具组"
             android:theme="@style/AppTheme">
-
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="关于Metro Master"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 

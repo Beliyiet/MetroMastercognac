@@ -131,6 +131,8 @@ implements NavigationView.OnNavigationItemSelectedListener {
         } else if (id == R.id.nav_feedback) {
 
         } else if (id == R.id.nav_about) {
+            Intent intent7 = new Intent(MainActivity.this,AboutActivity.class);
+            startActivity(intent7);
 
         }
 
