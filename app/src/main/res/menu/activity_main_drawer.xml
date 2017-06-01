@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+        <item android:id="@+id/nav_station" android:icon="@drawable/station_48px"
+            android:title="站点" />
+        <item android:id="@+id/nav_info" android:icon="@drawable/info_48px_2"
+            android:title="预案信息" />
+        <item android:id="@+id/nav_map" android:icon="@drawable/map_48px"
+            android:title="地图" />
+        <item android:id="@+id/nav_tools" android:icon="@drawable/tools_48px"
+            android:title="工具" />
+    </group>
+
+    <item android:title="关于Metro Master">
+        <menu>
+
+            <item
+                android:id="@+id/nav_settings"
+                android:title="设置"
+                android:icon="@drawable/settings_48px"/>
+
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/feedback_48px"
+                android:title="反馈" />
+
+            <item android:id="@+id/nav_about"
+                android:icon="@drawable/about_48px"
+                android:title="关于" />
+        </menu>
+    </item>
+
+</menu>

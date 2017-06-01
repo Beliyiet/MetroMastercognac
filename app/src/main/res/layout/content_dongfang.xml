@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.fmebicorp.beliyiet.metromastercognac.dongfangActivity"
+    tools:showIn="@layout/activity_dongfang">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ExtraText"
+        android:orientation="vertical"
+        android:paddingTop="24dp">
+        
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainPageStationCard1"
+            android:layout_margin="10dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="站点概况"
+                    android:textSize="25dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#4d4d4d"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="地址：耀体路靠近东育路\n运营线路：6、8、11\n运营公司：四公司\n总面积：15000m2\n换乘方式：通道换乘"
+                    />
+
+            </LinearLayout>
+            
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainPageStationCard2"
+            android:layout_margin="10dp"
+            android:background="@color/colorLine6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6号线"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textSize="25dp" />
+
+                <View
+                    android:layout_height="4px"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorLine6"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="站厅站台"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="站点面积：15000\n站厅/站台面积：10000/5000m2\n站厅/站台层高：5/5m\n层数：3\n深度：21m\n站台形式：侧式"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="消防灭火专用通道"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="入口1 东广场  到达 东办公区、6号线站台\n入口2 西广场  到达  西办公区"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="隧道情况"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="区间隧道长度：本站→灵岩南路，上行1525米，下行1525米\n区间隧道连接通道	：站台下行763米"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

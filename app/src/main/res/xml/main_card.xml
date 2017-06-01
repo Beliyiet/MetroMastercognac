@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.fmebicorp.beliyiet.metromastercognac.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:clickable="true"
+        android:stateListAnimator="@drawable/lift_on_touch"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/pic1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/jpg_station_dongfangtiyuzghongxin" />
+
+            <TextView
+                android:id="@+id/Station1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="东方体育中心"
+                android:textSize="28dp"
+                android:layout_below="@+id/pic1"
+                />
+            <TextView
+                android:id="@+id/Station1_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="耀体路靠近东育路 6 8 11"
+                android:textSize="12dp"
+                android:layout_below="@id/Station1"/>
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</android.widget.LinearLayout>
