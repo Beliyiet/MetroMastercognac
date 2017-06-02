@@ -14,7 +14,7 @@
         tools:ignore="ExtraText"
         android:orientation="vertical"
         android:paddingTop="24dp">
-        
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:text="站点面积：15000\n站厅/站台面积：10000/5000m2\n站厅/站台层高：5/5m\n层数：3\n深度：21m\n站台形式：侧式"/>
+                    android:text="站点面积：15000\n站厅/站台面积：10000/5000m2\n站台形式：侧式\n站厅/站台层高：5/5m\n层数：3\n深度：21m"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -153,11 +153,224 @@
                     android:layout_marginRight="15dp"
                     android:text="区间隧道长度：本站→灵岩南路，上行1525米，下行1525米\n区间隧道连接通道	：站台下行763米"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="设备及管理用房"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="站厅1层（地下一层）：
+                    \n车控室、信号机房、消防泵房、烟烙尽、通信电源室、通信设备室、民用通信机房、通信仪表室、环控电控室、环控机房
+                    \n站厅2层（地下二层）：\n环控电控室、环控机房、民用通信机房、通信机房、信号设备室、小通风机房、配电间、降压变电所
+                    \n站台：\n东端：屏蔽门控制室、厕所、配电间、污水泵房、站务员休息室\n西端：配电间、蓄电池室、废水泵房"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="联系方式"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="车控室：63189188/62800\n区域站长室：王陆霁 38824830/62805\n线路控制室电话："/>
+
+
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainPageStationCard3"
+            android:layout_margin="10dp"
+            android:background="@color/colorLine6">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8号线"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textSize="25dp" />
+
+                <View
+                    android:layout_height="4px"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorLine8"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="站厅站台"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="站点面积：15000\n站厅/站台面积：10000/5000m2\n站台形式：岛式\n站厅/站台层高：5/5m\n层数：2\n深度：14m"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="消防灭火专用通道"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="入口1 东广场  到达 东办公区、6号线站台\n入口2 西广场  到达  西办公区"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="隧道情况"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="上行线：凌兆新村→东方体育中心→杨思路\n下行线：杨思路→东方体育中心→凌兆新村\n区间隧道长度：\n本站→杨思路站，上行1500米，下行1500米\n本站→凌兆新村站，上行1800米，下行1800米\n区间隧道连接通道：站台上行750米，站台下行900米"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="设备及管理用房"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="站厅层（地下一层）：
+                    \n车控室、信号机房、消防泵房、烟烙尽、通信电源室、通信设备室、民用通信机房、通信仪表室、环控电控室、环控机房
+                    \n站台层：
+                    \n北端：设备机房
+                    \n南端：设备机房
+                    "/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="联系方式"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <View
+                    android:layout_height="2px"
+                    android:layout_width="match_parent"
+                    android:background="#6c6c6c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="车控室：63189188/62800\n区域站长室：王陆霁 38824830/62805\n线路控制室电话："/>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
         
     </LinearLayout>
 
