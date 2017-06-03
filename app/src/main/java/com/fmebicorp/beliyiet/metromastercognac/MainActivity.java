@@ -117,7 +117,8 @@ implements NavigationView.OnNavigationItemSelectedListener {
         int id = item.getItemId();
 
         if (id == R.id.nav_station) {
-
+            Intent intent = new Intent(MainActivity.this,StationActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_info) {
 
