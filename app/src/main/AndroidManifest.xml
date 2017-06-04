@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label="Metro Master"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SettingsActivity"
             android:label="设置"
@@ -24,13 +24,11 @@
         <activity
             android:name=".ToolsActivity"
             android:label="工具组"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".AboutActivity"
             android:label="关于Metro Master"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SplashActivity"
             android:configChanges="keyboardHidden"
@@ -46,9 +44,8 @@
         </activity>
         <activity
             android:name=".StationActivity"
-            android:label="站点"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:label="@string/title_activity_station"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
