@@ -20,7 +20,7 @@ public class dongfangActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "编辑", Snackbar.LENGTH_SHORT)
+                Snackbar.make(view, "查看地铁站图片", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });

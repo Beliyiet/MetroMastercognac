@@ -147,7 +147,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
 
     private boolean mIsExit;
     @Override
-    /**
+    /*
      * 双击返回键退出
      */
     public boolean onKeyDown(int keyCode, KeyEvent event) {
