@@ -123,6 +123,8 @@ implements NavigationView.OnNavigationItemSelectedListener {
         } else if (id == R.id.nav_info) {
 
         } else if (id == R.id.nav_map) {
+            Intent intent3 = new Intent(MainActivity.this,MetroMapActivity.class);
+            startActivity(intent3);
 
         } else if (id == R.id.nav_tools) {
             Intent intent4 = new Intent(MainActivity.this,ToolsActivity.class);

@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fmebicorp.beliyiet.metromastercognac">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -45,8 +52,15 @@
         <activity
             android:name=".StationActivity"
             android:label="线路"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme"></activity>
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="2237a71a3fc8f740a9ddd93b6494a232">
+            //Beliyiet申请的key~
+        </meta-data>
+
+        <activity android:name=".MetroMapActivity"></activity>
     </application>
 
 </manifest>
