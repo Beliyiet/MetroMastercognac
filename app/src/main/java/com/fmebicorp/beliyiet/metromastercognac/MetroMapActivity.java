@@ -1,13 +1,17 @@
 package com.fmebicorp.beliyiet.metromastercognac;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class MetroMapActivity extends AppCompatActivity {
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.MapView;
+
+
+public class MetroMapActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_metro_map);
     }
+
 }
