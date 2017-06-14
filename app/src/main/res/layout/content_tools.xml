@@ -47,7 +47,7 @@
                 android:id="@+id/image1"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/jpg_photo"
+
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -102,7 +102,7 @@
                 android:id="@+id/image2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/jpg_line"
+
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -157,7 +157,7 @@
                 android:id="@+id/image3"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/jpg_distance"
+
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -212,7 +212,7 @@
                 android:id="@+id/image4"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/jpg_dial"
+
                 android:scaleType="centerCrop" />
 
             <TextView
