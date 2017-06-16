@@ -11,9 +11,10 @@
     <ImageView
         android:id="@+id/topphoto"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:src="@drawable/start_greeting"
-        android:layout_margin="16dp"/>
+        android:layout_height="80dp"
+        android:src="@drawable/about_dragon"
+        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/texttop"
