@@ -178,4 +178,5 @@
     </string>
     <string name="title_activity_dongfang">dongfangActivity</string>
     <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_station_map">StationMapActivity</string>
 </resources>

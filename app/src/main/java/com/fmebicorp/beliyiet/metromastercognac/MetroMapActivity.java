@@ -7,14 +7,11 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-
-import com.amap.api.maps.AMapOptions;
 import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.AMap;
 
 
 import com.amap.api.maps.UiSettings;
-import com.amap.api.maps.model.LatLng;
 
 
 public class MetroMapActivity extends Activity implements LocationSource {
@@ -37,12 +34,6 @@ public class MetroMapActivity extends Activity implements LocationSource {
 
         UiSettings mUiSettings;//定义一个UiSettings对象
         mUiSettings = aMap.getUiSettings();//实例化UiSettings类对象
-
-
-        //定位中队坐标
-        LatLng centerXJPoint = new LatLng(121.360943,31.226912);
-        AMapOptions mapOptions = new AMapOptions();//
-
 
 
         final int[] number = {0};
