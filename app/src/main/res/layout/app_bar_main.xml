@@ -12,8 +12,12 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorBackgroundFloating"
+        android:background="#00000000"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <include
+        layout="@layout/main_functions">
+    </include>
 
 
     <include
