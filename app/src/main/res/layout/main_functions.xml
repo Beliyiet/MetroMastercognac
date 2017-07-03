@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2017 FMEBI.Corp System and CreateON Studio. All rights reserved.
+  ~ Before using all the features of Metro Master (hereinafter referred to as MeM), please be sure to read and thoroughly understand this statement. You may choose not to use MeM, but if you use it, your use will be deemed to be a recognition of the entire contents of this statement.
+  ~ Disclaimer: In view of MeM is currently not fully developed in the function, and the contents of the data information is limited by the information collected in the collection, processing errors may occur, the data is not entirely collected by the CreateON Studio, so the system of search / analysis The results are not responsible. The system does not assume any liability for any adverse consequences arising from the retrieval / analysis of the system as a basis for any commercial conduct or academic research.
+  ~ About privacy: MeM does not currently collect personal privacy other than geographic location information about the user during use.
+  ~ About copyright:
+  ~ 1. All works of MeM that indicate "Metro Master", "Metro Master", "CreateON", "CreateON Studio", "" are owned by CreateON Studio and MeM. Other media, companies, organizations, websites or individuals may not be reproduced in any form, nor distorted and tampered with the contents of the system.
+  ~ 2.MeM currently only granted to the Shanghai Fire Brigade special detachment of the new Jing squadron all, temporarily not granted any other units and personal use.
+  ~ 3. Units authorized by the system shall not exceed the scope of authorization.
+  ~ 4. The information provided by the system does not conform to the relevant paper text, subject to the paper text.
+  ~ 5. If you are in contact with MeM due to the contents of the work, copyright and other issues, please do so within 30 days after MeM has released the work.
+  ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    >
 
     <android.support.v7.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,17 +27,27 @@
         android:layout_width="120dp"
         android:layout_height="160dp"
         android:elevation="16dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/plans"
-        android:stateListAnimator="@drawable/lift_on_touch">
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:stateListAnimator="@drawable/lift_on_touch"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/plans"
+            android:scaleType="centerCrop"/>
         <TextView
-            android:id="@+id/main_function_card_text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_gravity="bottom"
             android:text="预案信息"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -31,15 +57,49 @@
         android:layout_height="160dp"
         android:elevation="16dp"
         android:layout_margin="8dp"
-        android:stateListAnimator="@drawable/lift_on_touch">
+        android:stateListAnimator="@drawable/lift_on_touch"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_toRightOf="@id/main_function_card_plans">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/site"
+            android:scaleType="centerCrop"/>
         <TextView
-            android:id="@+id/main_function_card_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_gravity="bottom"
             android:text="线路及站点"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_function_card_maps"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:elevation="16dp"
+        android:layout_margin="8dp"
+        android:stateListAnimator="@drawable/lift_on_touch"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_toRightOf="@id/main_function_card_line_site">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/card_tools"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="bottom"
+            android:text="路线地图"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -49,16 +109,25 @@
         android:layout_height="160dp"
         android:elevation="16dp"
         android:layout_margin="8dp"
-        android:stateListAnimator="@drawable/lift_on_touch">
+        android:stateListAnimator="@drawable/lift_on_touch"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_toRightOf="@id/main_function_card_maps">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/card_tools"
+            android:scaleType="centerCrop"/>
         <TextView
-            android:id="@+id/main_function_card_text3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_gravity="bottom"
-            android:text="工具"
-            android:textSize="20dp" />
-
+            android:text="小工具"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
     </android.support.v7.widget.CardView>
 
-</LinearLayout>
+
+
+</RelativeLayout>
