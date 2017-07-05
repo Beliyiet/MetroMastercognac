@@ -61,13 +61,6 @@ implements NavigationView.OnNavigationItemSelectedListener {
         });
 
         CardView cardView = (CardView) findViewById(R.id.dftyzx);
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,dongfangActivity.class);
-                startActivity(intent);
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
