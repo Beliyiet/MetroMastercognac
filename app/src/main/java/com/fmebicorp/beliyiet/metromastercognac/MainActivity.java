@@ -34,6 +34,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -55,12 +56,39 @@ implements NavigationView.OnNavigationItemSelectedListener {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "添加站点收藏", Snackbar.LENGTH_SHORT)
+                Snackbar.make(view, "", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });
 
-        CardView cardView = (CardView) findViewById(R.id.dftyzx);
+        //主界面项目点击事件:实战资料速查
+        Button button  = (Button)findViewById(R.id.main_content_button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,StationInformation.class);
+                startActivity(intent);
+            }
+        });
+        //主界面项目点击事件:作战编程
+        Button button2  = (Button)findViewById(R.id.main_content_button4);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view2) {
+                Intent intent2 = new Intent(MainActivity.this,CombatInformationActivity.class);
+                startActivity(intent2);
+            }
+        });
+
+        //主界面项目点击事件:路线导航
+        Button button3  = (Button)findViewById(R.id.main_content_button1);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view3) {
+                Intent intent3 = new Intent(MainActivity.this,MapActivity.class);
+                startActivity(intent3);
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -69,11 +97,18 @@ implements NavigationView.OnNavigationItemSelectedListener {
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);}
 
-
-
-    }
+        public void click(View view2) {
+            int id = view2.getId();
+            switch (id) {
+                case R.id.main_content_button1:
+                    Intent intent = new Intent(MainActivity.this, CombatInformationActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.main_content_button2:
+            }
+        }
 
     @Override
     public void onBackPressed() {
@@ -95,12 +130,10 @@ implements NavigationView.OnNavigationItemSelectedListener {
 
 
     }
-
+/*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-
 
         if (id == R.id.action_MainPagesettings) {
 
@@ -110,12 +143,10 @@ implements NavigationView.OnNavigationItemSelectedListener {
             return true;
         }
 
-
         return super.onOptionsItemSelected(item);
 
-
     }
-
+*/
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -129,8 +160,8 @@ implements NavigationView.OnNavigationItemSelectedListener {
         } else if (id == R.id.nav_info) {
 
         } else if (id == R.id.nav_map) {
-            Intent intent3 = new Intent(MainActivity.this,MetroMapActivity.class);
-            startActivity(intent3);
+            Intent intent = new Intent(MainActivity.this,MapActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_tools) {
             Intent intent4 = new Intent(MainActivity.this,ToolsActivity.class);
@@ -155,15 +186,11 @@ implements NavigationView.OnNavigationItemSelectedListener {
 
     private boolean mIsExit;
     @Override
-    /*
-     * 双击返回键退出
-     */
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (mIsExit) {
                 this.finish();
-
             } else {
                 Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
                 mIsExit = true;
@@ -186,7 +213,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
 
 /*
 Metro Master cognac 1.0 preview
-Production by Create ON studio
+Production by CreateON studio
 Developer:Konvirs Beliyiet
 =￣ω￣=
  */

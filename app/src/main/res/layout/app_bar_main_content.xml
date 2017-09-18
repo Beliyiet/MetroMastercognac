@@ -13,30 +13,57 @@
   ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:collapseColumns="2"
+    android:stretchColumns="0,1">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/jpg_63810"
-        android:scaleType="centerCrop"/>
+    <TableRow>
+        <ImageView
+            android:layout_column="0"
+            android:layout_span="2"
+            android:layout_height="280dp"
+            android:src="@drawable/jpg_638100"
+            />
+    </TableRow>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+    <TableRow
+        android:layout_margin="4dp">
+        <Button
+            android:id="@+id/main_content_button1"
+            android:layout_span="1"
+            android:onClick="onclick"
+            android:text="路线导航"/>
+        <Button
+            android:id="@+id/main_content_button2"
+            android:layout_span="1"
+            android:onClick="onclick"
+            android:text="3D模型" />
+    </TableRow>
+    <TableRow
+        android:layout_margin="4dp">
+        <Button
+            android:id="@+id/main_content_button3"
+            android:layout_span="1"
+            android:onClick="onclick"
+            android:text="实战资料速查"/>
+        <Button
+            android:id="@+id/main_content_button4"
+            android:layout_span="1"
+            android:onClick="onclick"
+            android:text="作战编程"/>
+    </TableRow>
+    <TableRow
+        android:layout_margin="4dp">
+        <Button
+            android:id="@+id/main_content_button5"
+            android:text="案例学习"
+            android:onClick="onclick"/>
+        <Button
+            android:id="@+id/main_content_button6"
+            android:text="考试系统"
+            android:onClick="onclick"/>
+    </TableRow>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </RelativeLayout>
-    </android.support.v7.widget.RecyclerView>
-
-
-</LinearLayout>
+</TableLayout>
