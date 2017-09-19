@@ -26,26 +26,30 @@ package com.fmebicorp.beliyiet.metromastercognac;
         import android.view.View;
         import android.widget.Button;
         import android.widget.TextView;
+        import android.widget.Toast;
 
         import com.baidu.location.LocationClient;
         import com.baidu.location.LocationClientOption;
         import com.baidu.mapapi.SDKInitializer;
+        import com.baidu.mapapi.map.BaiduMap;
         import com.baidu.mapapi.map.MapView;
         import com.baidu.location.BDAbstractLocationListener;
         import com.baidu.location.BDLocation;
         import com.baidu.location.BDLocationListener;
         import com.baidu.location.Poi;
-        import com.baidu.location.service.LocationService;
 
 
 public class MapActivity extends AppCompatActivity {
 
     MapView mMapview = null;
     private Button startLocation;
+    private Button trafficLayer;
+    private Button mapLayer;
     private LocationClient mLocationClient;
     public LocationService locationService;
     public Vibrator mVibrator;
     private LocationService LocationApplication;
+    public BaiduMap mBaiduMap;
 
 
     @Override
@@ -57,8 +61,9 @@ public class MapActivity extends AppCompatActivity {
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_map);
         mMapview = (MapView) findViewById(R.id.map);
+        mBaiduMap = mMapview.getMap();
 
-        startLocation = (Button)findViewById(R.id.button_map_nav);
+        startLocation = (Button)findViewById(R.id.button_map_loc);
         mLocationClient = new LocationClient(this);
         mLocationClient.registerLocationListener(new BDLocationListener() {
             @Override
@@ -99,7 +104,7 @@ public class MapActivity extends AppCompatActivity {
         // 设置定位模式,一共三种模式，高精度（使用GPS、网络定位，精度最高），低功耗（仅使用网络定位），仅设备（仅使用GPS定位）
         option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
         // 设置坐标系，gcj02表示国测局加密经纬度坐标，bd0911百度加密经纬度坐标，bd09百度加密墨卡托坐标
-        option.setCoorType("jcj02");
+        option.setCoorType("bd0911");
         // 设置发起定位请求的间隔时间为1000ms
         option.setScanSpan(1000);
         //设置是否反地理编码，TRUE表示会显示位置的文字信息
@@ -120,16 +125,54 @@ public class MapActivity extends AppCompatActivity {
             }
         });
 
+        final int[] number1 = {0};
+        trafficLayer = (Button)findViewById(R.id.button_map_traLayer);
+        trafficLayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (number1[0] ==0){
+                    //交通图开启
+                    mBaiduMap.setTrafficEnabled(true);
+                    Toast.makeText(MapActivity.this,"交通图开启",Toast.LENGTH_SHORT).show();
+                }else if (number1[0] == 1){
+                    //交通图关闭
+                    mBaiduMap.setTrafficEnabled(false);
+                    Toast.makeText(MapActivity.this,"交通图关闭",Toast.LENGTH_SHORT).show();
+                }
+                number1[0] = (number1[0] + 1)%2;
+            }
+        });
+
+        final int[] number2 = {0};
+        mapLayer = (Button)findViewById(R.id.button_map_layerMode);
+        mapLayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (number2[0] ==0){
+                    mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
+                    Toast.makeText(MapActivity.this,"标准地图",Toast.LENGTH_SHORT).show();
+                }else if (number2[0] ==1){
+                    mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
+                    Toast.makeText(MapActivity.this,"卫星地图",Toast.LENGTH_SHORT).show();
+                }
+                number2[0] = (number2[0] + 1)%2;
+            }
+        });
+
     }
+
+
+
 
 
 /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        startLocation = (Button) findViewById(R.id.menu_map_loc);
         int id = item.getItemId();
 
         if (id == R.id.menu_map_loc) {
-            startLocation = (Button) findViewById(R.id.menu_map_loc);
+
 
         } else if (id == R.id.menu_map_nav) {
 

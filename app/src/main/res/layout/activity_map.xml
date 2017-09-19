@@ -35,26 +35,49 @@
             android:gravity="right">
 
             <Button
-                android:id="@+id/button_map_nav"
+                android:id="@+id/button_map_loc"
                 android:text="开始定位"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"/>
+
+
             <Button
-                android:id="@+id/button_map_traLayer"
-                android:text="交通情况"
+                android:id="@+id/button_map_nav"
+                android:text="路线导航"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"/>
+                android:layout_height="wrap_content" />
 
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
+    <include layout="@layout/content_map" />
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="58dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         >
+        <Button
+            android:id="@+id/button_map_traLayer"
+            android:text="交通情况"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/button_map_layerMode"
+            android:text="地图模式"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:layout_editor_absoluteY="0dp"
+            app:layout_constraintStart_toEndOf="@+id/button_map_traLayer"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints" />
+
     </android.support.constraint.ConstraintLayout>
-    <include layout="@layout/content_map" />
 
 </android.support.design.widget.CoordinatorLayout>
