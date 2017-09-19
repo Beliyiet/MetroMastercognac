@@ -14,18 +14,17 @@
 
 package com.fmebicorp.beliyiet.metromastercognac;
 
-        import android.content.Intent;
-        import android.location.LocationListener;
+        import android.content.DialogInterface;
         import android.os.Bundle;
         import android.os.Vibrator;
-        import android.support.design.widget.Snackbar;
+        import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.support.v7.widget.Toolbar;
+        import android.text.InputType;
         import android.util.Log;
-        import android.view.MenuItem;
         import android.view.View;
         import android.widget.Button;
-        import android.widget.TextView;
+        import android.widget.EditText;
         import android.widget.Toast;
 
         import com.baidu.location.LocationClient;
@@ -33,22 +32,22 @@ package com.fmebicorp.beliyiet.metromastercognac;
         import com.baidu.mapapi.SDKInitializer;
         import com.baidu.mapapi.map.BaiduMap;
         import com.baidu.mapapi.map.MapView;
-        import com.baidu.location.BDAbstractLocationListener;
         import com.baidu.location.BDLocation;
         import com.baidu.location.BDLocationListener;
-        import com.baidu.location.Poi;
 
 
 public class MapActivity extends AppCompatActivity {
 
     MapView mMapview = null;
+    private String searchText = "";
     private Button startLocation;
     private Button trafficLayer;
     private Button mapLayer;
+    private Button searchButton;
     private LocationClient mLocationClient;
     public LocationService locationService;
-    public Vibrator mVibrator;
     private LocationService LocationApplication;
+    public Vibrator mVibrator;
     public BaiduMap mBaiduMap;
 
 
@@ -156,6 +155,31 @@ public class MapActivity extends AppCompatActivity {
                     Toast.makeText(MapActivity.this,"卫星地图",Toast.LENGTH_SHORT).show();
                 }
                 number2[0] = (number2[0] + 1)%2;
+            }
+        });
+
+
+        ///地点检索用 可输入型弹出框部分///
+        ///context:input_dialogbox.xml///
+        searchButton = (Button)findViewById(R.id.button_map_search);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
+            builder.setTitle("搜索");
+            //设定输入
+            final EditText input = new EditText(MapActivity.this);
+            //指定输入类型
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+            builder.setView(input);
+            //设定按钮
+                builder.setPositiveButton("搜索", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        searchText = input.getText().toString();
+                    }
+                });
+                builder.show();
             }
         });
 
