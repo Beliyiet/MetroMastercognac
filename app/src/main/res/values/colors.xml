@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2017 FMEBI.Corp System and CreateON Studio. All rights reserved.
+  ~ Before using all the features of Metro Master (hereinafter referred to as MeM), please be sure to read and thoroughly understand this statement. You may choose not to use MeM, but if you use it, your use will be deemed to be a recognition of the entire contents of this statement.
+  ~ Disclaimer: In view of MeM is currently not fully developed in the function, and the contents of the data information is limited by the information collected in the collection, processing errors may occur, the data is not entirely collected by the CreateON Studio, so the system of search / analysis The results are not responsible. The system does not assume any liability for any adverse consequences arising from the retrieval / analysis of the system as a basis for any commercial conduct or academic research.
+  ~ About privacy: MeM does not currently collect personal privacy other than geographic location information about the user during use.
+  ~ About copyright:
+  ~ 1. All works of MeM that indicate "Metro Master", "Metro Master", "CreateON", "CreateON Studio", "" are owned by CreateON Studio and MeM. Other media, companies, organizations, websites or individuals may not be reproduced in any form, nor distorted and tampered with the contents of the system.
+  ~ 2.MeM currently only granted to the Shanghai Fire Brigade special detachment of the new Jing squadron all, temporarily not granted any other units and personal use.
+  ~ 3. Units authorized by the system shall not exceed the scope of authorization.
+  ~ 4. The information provided by the system does not conform to the relevant paper text, subject to the paper text.
+  ~ 5. If you are in contact with MeM due to the contents of the work, copyright and other issues, please do so within 30 days after MeM has released the work.
+  ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <resources>
     <color name="colorPrimary">#eeeeee</color>
     <color name="colorPrimaryDark">#212121</color>
     <color name="colorAccent">#b3282c</color>
     <color name="colorLine6">#e50f9f</color>
-    <color name="colorLine8">#00a2dd</color>
+    <color name="colorLine8">#df3336</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="main_bg">#288df5</color>
+    <color name="menu_bottom_bg">#288df5</color>
+    <color name="menu_bottom_text">#f2f8ff</color>
+    <color name="info_black_text">#585858</color>
+    <color name="info_gray_text">#979797</color>
+    <color name="info_blue_text">#3993f3</color>
+    <color name="info_layout_bg">#eaeaea</color>
+    <color name="info_honorroll_item_text">#656565</color>
+    <color name="view_manager">#e3e3e3</color>
+    <color name="black_text">#FF18191A</color>
+    <!-- 答题 -->
+    <color name="practice_test_no_text">#00366e</color>
+    <color name="practice_test_content_text">#2f2f2f</color>
+    <color name="practice_test_result_text">#9a9a9a</color>
+    <color name="practice_test_result_right_text">#61bc31</color>
+    <color name="practice_test_result_wrong_text">#d53235</color>
+    <color name="practice_test_result_statistics_text">#2991f4</color>
+    <color name="practice_test_result_detail_text">#ab8b28</color>
+    <color name="my_error_question_text_black">#333333</color>
+    <color name="lucky_text_redtop">#e33b20</color>
+    <color name="lucky_text_black">#676566</color>
+    <color name="lucky_text_red">#e43b1c</color>
+    <color name="black38_text">#383838</color>
 </resources>

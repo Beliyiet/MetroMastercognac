@@ -12,55 +12,33 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-apply plugin: 'com.android.application'
+package com.example.answer.util;
 
-android {
-    signingConfigs {
-        config {
-            keyAlias 'MetroMaster'
-            keyPassword '19971206'
-            storeFile file('D:/BELIYIET/MetroMaster.jks')
-            storePassword '19971206'
-        }
-    }
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
-    defaultConfig {
-        applicationId "com.fmebicorp.beliyiet.metromastercognac"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.1alpha_4000  "
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
-        }
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }
-}
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.view.animation.Interpolator;
+import android.widget.Scroller;
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:cardview-v7:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.android.support:support-vector-drawable:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile files('libs/BaiduLBS_Android.jar')
-    compile 'junit:junit:4.12'
-    implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+@SuppressLint("NewApi") 
+public class ViewPagerScroller extends Scroller {
+	
+	private int mScrollDuration = 1500;// 滑动速度
+    public ViewPagerScroller(Context context) {
+        super(context);
+    }
+    public ViewPagerScroller(Context context, Interpolator interpolator) {
+        super(context, interpolator);
+    }
+    public ViewPagerScroller(Context context, Interpolator interpolator, boolean flywheel) {
+        super(context, interpolator, flywheel);
+    }
+    @Override
+    public void startScroll(int startX, int startY, int dx, int dy, int duration) {
+        super.startScroll(startX, startY, dx, dy, mScrollDuration);
+    }
+    @Override
+    public void startScroll(int startX, int startY, int dx, int dy) {
+        super.startScroll(startX, startY, dx, dy, mScrollDuration);
+    }
+
 }

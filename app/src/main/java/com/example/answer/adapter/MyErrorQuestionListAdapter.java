@@ -12,55 +12,89 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-apply plugin: 'com.android.application'
+package com.example.answer.adapter;
 
-android {
-    signingConfigs {
-        config {
-            keyAlias 'MetroMaster'
-            keyPassword '19971206'
-            storeFile file('D:/BELIYIET/MetroMaster.jks')
-            storePassword '19971206'
-        }
-    }
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
-    defaultConfig {
-        applicationId "com.fmebicorp.beliyiet.metromastercognac"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.1alpha_4000  "
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
-        }
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }
-}
+import java.util.List;
+import java.util.Map;
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:cardview-v7:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.android.support:support-vector-drawable:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile files('libs/BaiduLBS_Android.jar')
-    compile 'junit:junit:4.12'
-    implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+import com.fmebicorp.beliyiet.metromastercognac.R;
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+/**
+ * 我的错题列表
+ * 
+ * 
+ */
+public class MyErrorQuestionListAdapter extends BaseAdapter {
+	private ListView listView;
+	private List<Map<String, Object>> list;
+	private LayoutInflater mInflater;
+	private Context context;
+
+	public MyErrorQuestionListAdapter(Context context, List<Map<String, Object>> list,
+			ListView listView) {
+		// this.context = context;
+		this.listView = listView;
+		this.context=context;
+		this.list = list;
+		this.mInflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	}
+
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ViewHolder viewHolder = null;
+		final Map<String, Object> map = list.get(position);
+		if (convertView != null) {
+			viewHolder = (ViewHolder) convertView.getTag();
+		} else {
+			viewHolder = new ViewHolder();
+			convertView = mInflater.inflate(R.layout.my_error_question_item, null);
+
+			viewHolder.title = (TextView) convertView.findViewById(R.id.my_error_item_name);
+		}
+		if (map != null && map.size() > 0) {
+
+			viewHolder.title.setText(position+1+"."+map.get("title").toString());
+			
+		}
+
+		convertView.setTag(viewHolder);
+		return convertView;
+	}
+
+	/**
+	 * 得到数据
+	 * 
+	 * @return
+	 */
+	public List<Map<String, Object>> GetData() {
+		return list;
+	}
+
+	public int getCount() {
+		return list.size();
+	}
+
+	public Object getItem(int position) {
+		return list.get(position);
+	}
+
+	public long getItemId(int position) {
+		return position;
+	}
+
+	public class ViewHolder {
+		TextView title;
+	}
 }

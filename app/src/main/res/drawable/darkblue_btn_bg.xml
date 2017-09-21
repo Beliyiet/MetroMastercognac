@@ -13,18 +13,22 @@
   ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SplashActivity"
-    android:background="#ffffff">
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#1fb5e8"/>
+            <gradient android:startColor="#1fb5e8" android:endColor="#1fb5e8" android:angle="270"></gradient>
+            <corners android:radius="5dip"/>
+        </shape>
+    </item>
+    
+    <item android:state_pressed="false">
+        <shape>
+            <solid android:color="#30bae9"/>
+            <gradient android:startColor="#30bae9" android:endColor="#30bae9" android:angle="270"></gradient>
+        	<corners android:radius="5dip"/>
+        </shape>
+    </item>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/start_greeting"
-        />
-
-</RelativeLayout>
+</selector>

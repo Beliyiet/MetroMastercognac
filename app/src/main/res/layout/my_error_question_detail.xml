@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2017 FMEBI.Corp System and CreateON Studio. All rights reserved.
+  ~ Before using all the features of Metro Master (hereinafter referred to as MeM), please be sure to read and thoroughly understand this statement. You may choose not to use MeM, but if you use it, your use will be deemed to be a recognition of the entire contents of this statement.
+  ~ Disclaimer: In view of MeM is currently not fully developed in the function, and the contents of the data information is limited by the information collected in the collection, processing errors may occur, the data is not entirely collected by the CreateON Studio, so the system of search / analysis The results are not responsible. The system does not assume any liability for any adverse consequences arising from the retrieval / analysis of the system as a basis for any commercial conduct or academic research.
+  ~ About privacy: MeM does not currently collect personal privacy other than geographic location information about the user during use.
+  ~ About copyright:
+  ~ 1. All works of MeM that indicate "Metro Master", "Metro Master", "CreateON", "CreateON Studio", "" are owned by CreateON Studio and MeM. Other media, companies, organizations, websites or individuals may not be reproduced in any form, nor distorted and tampered with the contents of the system.
+  ~ 2.MeM currently only granted to the Shanghai Fire Brigade special detachment of the new Jing squadron all, temporarily not granted any other units and personal use.
+  ~ 3. Units authorized by the system shall not exceed the scope of authorization.
+  ~ 4. The information provided by the system does not conform to the relevant paper text, subject to the paper text.
+  ~ 5. If you are in contact with MeM due to the contents of the work, copyright and other issues, please do so within 30 days after MeM has released the work.
+  ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/info_layout_bg" >
+
+	<include layout="@layout/header" android:id="@+id/header"/>
+	
+	<ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_margin="@dimen/margin_10"
+        android:background="@color/white"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_10" >
+
+            <TextView
+                android:id="@+id/activity_prepare_test_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/home_menu_margin_8"
+                android:textColor="@color/practice_test_no_text"
+                android:textSize="16sp" 
+                />
+            
+            <TextView
+                android:id="@+id/activity_prepare_test_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/home_menu_margin_8"
+                android:textColor="@color/practice_test_content_text"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- 单选 -->
+
+        <LinearLayout
+            android:id="@+id/activity_prepare_test_radioBtnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:layout_marginLeft="@dimen/margin_10"
+            >
+
+            <LinearLayout
+                android:id="@+id/activity_prepare_test_layout_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/home_menu_margin_8" >
+
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practice_test_normal" />
+
+                <TextView
+                    android:id="@+id/vote_submit_select_text_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:text="您给出的回答选项？"
+                    android:textSize="16sp"
+                    android:textColor="@color/practice_test_result_text" />
+                
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_a_"
+                    android:layout_width="150dip"
+                    android:layout_height="75dip"
+                    android:src="@drawable/ic_practice_test_normal" 
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:scaleType="fitXY"
+                    />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/activity_prepare_test_layout_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/home_menu_margin_8" >
+
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practice_test_normal" />
+
+                <TextView
+                    android:id="@+id/vote_submit_select_text_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:text="您给出的回答选项？"
+                    android:textSize="16sp"
+                    android:textColor="@color/practice_test_result_text" />
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_b_"
+                    android:layout_width="150dip"
+                    android:layout_height="75dip"
+                    android:src="@drawable/ic_practice_test_normal" 
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:scaleType="fitXY"
+                    />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/activity_prepare_test_layout_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/home_menu_margin_8" >
+
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practice_test_normal" />
+
+                <TextView
+                    android:id="@+id/vote_submit_select_text_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:text="您给出的回答选项？"
+                    android:textSize="16sp"
+                    android:textColor="@color/practice_test_result_text" />
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_c_"
+                    android:layout_width="150dip"
+                    android:layout_height="75dip"
+                    android:src="@drawable/ic_practice_test_normal" 
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:scaleType="fitXY"
+                    />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/activity_prepare_test_layout_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/home_menu_margin_8" >
+
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practice_test_normal" />
+
+                <TextView
+                    android:id="@+id/vote_submit_select_text_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:text="您给出的回答选项？"
+                    android:textSize="16sp"
+                    android:textColor="@color/practice_test_result_text" />
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_d_"
+                    android:layout_width="150dip"
+                    android:layout_height="75dip"
+                    android:src="@drawable/ic_practice_test_normal" 
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:scaleType="fitXY"
+                    />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/activity_prepare_test_layout_e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/home_menu_margin_8" >
+
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practice_test_normal" />
+
+                <TextView
+                    android:id="@+id/vote_submit_select_text_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:text="您给出的回答选项？"
+                    android:textSize="16sp"
+                    android:textColor="@color/practice_test_result_text" />
+                <ImageView
+                    android:id="@+id/vote_submit_select_image_e_"
+                    android:layout_width="150dip"
+                    android:layout_height="75dip"
+                    android:src="@drawable/ic_practice_test_normal" 
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/home_menu_margin_8"
+                    android:scaleType="fitXY"
+                    />
+            </LinearLayout>
+
+            
+        </LinearLayout>
+
+        <!-- 错题分析 -->
+
+        <LinearLayout
+            android:id="@+id/activity_prepare_test_wrongLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/btn_height"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_practice_test_analyze" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@drawable/ic_practice_test_explaindetail"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/activity_prepare_test_explaindetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/practice_test_result_detail_text" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    </ScrollView>
+
+</RelativeLayout>

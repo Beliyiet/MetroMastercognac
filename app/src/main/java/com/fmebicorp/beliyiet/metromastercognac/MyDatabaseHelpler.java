@@ -12,55 +12,82 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-apply plugin: 'com.android.application'
+package com.fmebicorp.beliyiet.metromastercognac;
 
-android {
-    signingConfigs {
-        config {
-            keyAlias 'MetroMaster'
-            keyPassword '19971206'
-            storeFile file('D:/BELIYIET/MetroMaster.jks')
-            storePassword '19971206'
-        }
-    }
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
-    defaultConfig {
-        applicationId "com.fmebicorp.beliyiet.metromastercognac"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.1alpha_4000  "
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
-        }
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }
-}
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:cardview-v7:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.android.support:support-vector-drawable:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile files('libs/BaiduLBS_Android.jar')
-    compile 'junit:junit:4.12'
-    implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+/**
+ * Created by BELIYIET on 2017/9/20.
+ */
+
+public class MyDatabaseHelpler extends SQLiteOpenHelper{
+
+    private static final String DATABASENAME = "ourmap.db";
+    private static final int DATABASEVERSION = 1;
+    private static final String TABLENAME = "ourmap";
+
+
+    public MyDatabaseHelpler(Context context) {
+
+        super(context, DATABASENAME, null, DATABASEVERSION);
+// TODO Auto-generated constructor stub
+
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+// TODO Auto-generated method stub
+
+        String sql = "CREATE TABLE " + TABLENAME + "(" +
+                "_id integer primary key autoincrement,"+
+                "Address varchar(50)," +        //地址名称
+                "Latitude double," +                        //纬度
+                "Longitude double )";                       //经度
+        db.execSQL(sql);
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+// TODO Auto-generated method stub
+        String sql = "drop table if exists" + TABLENAME;
+        db.execSQL(sql);
+        this.onCreate(db);
+
+    }
+
+
+    public void insert(String address,double latitude,double longitude)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "insert into " + TABLENAME + "(Address,Latitude,Longitude) values('" + address + "','" + latitude + "','" + longitude + "')";
+        db.execSQL(sql);
+        db.close();
+
+    }
+
+    public void delete(String address)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "delete from " + TABLENAME + "where Address=" + address;
+        db.execSQL(sql);
+        db.close();
+
+    }
+
+    public void search(String sql)
+    {
+
+        SQLiteDatabase dbb = this.getWritableDatabase();
+        dbb.execSQL(sql);
+        dbb.close();
+
+    }
 }

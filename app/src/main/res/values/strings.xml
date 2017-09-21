@@ -195,4 +195,6 @@
     <string name="title_activity_combat_information">CombatInformationActivity</string>
     <string name="title_activity_unity__songhong">Songhong</string>
     <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_test_main">考试系统</string>
+    <string name="title_activity_analogy_examination">AnalogyExaminationActivity</string>
 </resources>

@@ -19,11 +19,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -35,12 +30,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import java.nio.charset.MalformedInputException;
-import java.security.PrivateKey;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 implements NavigationView.OnNavigationItemSelectedListener {
@@ -87,6 +78,16 @@ implements NavigationView.OnNavigationItemSelectedListener {
             public void onClick(View view3) {
                 Intent intent3 = new Intent(MainActivity.this,MapActivity.class);
                 startActivity(intent3);
+            }
+        });
+
+        //主界面项目点击事件:考试系统
+        Button button4  = (Button)findViewById(R.id.main_content_button6);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view4) {
+                Intent intent4 = new Intent(MainActivity.this,com.example.answer.MainActivity.class);
+                startActivity(intent4);
             }
         });
 
@@ -184,6 +185,8 @@ implements NavigationView.OnNavigationItemSelectedListener {
     }
 
 
+
+
     private boolean mIsExit;
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -203,7 +206,6 @@ implements NavigationView.OnNavigationItemSelectedListener {
             }
             return true;
         }
-
         return super.onKeyDown(keyCode, event);
     }
 

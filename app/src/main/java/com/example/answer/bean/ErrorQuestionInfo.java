@@ -12,55 +12,102 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-apply plugin: 'com.android.application'
+package com.example.answer.bean;
 
-android {
-    signingConfigs {
-        config {
-            keyAlias 'MetroMaster'
-            keyPassword '19971206'
-            storeFile file('D:/BELIYIET/MetroMaster.jks')
-            storePassword '19971206'
-        }
-    }
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
-    defaultConfig {
-        applicationId "com.fmebicorp.beliyiet.metromastercognac"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.1alpha_4000  "
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
-        }
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }
-}
+public class ErrorQuestionInfo {
+	
+	public int questionId;
+	public String questionName;
+	public String questionType;
+	public String questionAnswer;
+	public String questionSelect;
+	public String isRight;
+	public String Analysis;
+	public String optionA;
+	public String optionB;
+	public String optionC;
+	public String optionD;
+	public String optionE;
+	public String optionType;
+	public int getQuestionId() {
+		return questionId;
+	}
+	public void setQuestionId(int questionId) {
+		this.questionId = questionId;
+	}
+	public String getQuestionName() {
+		return questionName;
+	}
+	public void setQuestionName(String questionName) {
+		this.questionName = questionName;
+	}
+	public String getQuestionType() {
+		return questionType;
+	}
+	public void setQuestionType(String questionType) {
+		this.questionType = questionType;
+	}
+	public String getQuestionAnswer() {
+		return questionAnswer;
+	}
+	public void setQuestionAnswer(String questionAnswer) {
+		this.questionAnswer = questionAnswer;
+	}
+	public String getQuestionSelect() {
+		return questionSelect;
+	}
+	public void setQuestionSelect(String questionSelect) {
+		this.questionSelect = questionSelect;
+	}
+	public String getIsRight() {
+		return isRight;
+	}
+	public void setIsRight(String isRight) {
+		this.isRight = isRight;
+	}
+	public String getAnalysis() {
+		return Analysis;
+	}
+	public void setAnalysis(String analysis) {
+		Analysis = analysis;
+	}
+	public String getOptionA() {
+		return optionA;
+	}
+	public void setOptionA(String optionA) {
+		this.optionA = optionA;
+	}
+	public String getOptionB() {
+		return optionB;
+	}
+	public void setOptionB(String optionB) {
+		this.optionB = optionB;
+	}
+	public String getOptionC() {
+		return optionC;
+	}
+	public void setOptionC(String optionC) {
+		this.optionC = optionC;
+	}
+	public String getOptionD() {
+		return optionD;
+	}
+	public void setOptionD(String optionD) {
+		this.optionD = optionD;
+	}
+	public String getOptionE() {
+		return optionE;
+	}
+	public void setOptionE(String optionE) {
+		this.optionE = optionE;
+	}
+	public String getOptionType() {
+		return optionType;
+	}
+	public void setOptionType(String optionType) {
+		this.optionType = optionType;
+	}
+	
+	
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:cardview-v7:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.android.support:support-vector-drawable:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile files('libs/BaiduLBS_Android.jar')
-    compile 'junit:junit:4.12'
-    implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }

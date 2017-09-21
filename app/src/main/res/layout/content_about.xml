@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2017 FMEBI.Corp System and CreateON Studio. All rights reserved.
+  ~ Before using all the features of Metro Master (hereinafter referred to as MeM), please be sure to read and thoroughly understand this statement. You may choose not to use MeM, but if you use it, your use will be deemed to be a recognition of the entire contents of this statement.
+  ~ Disclaimer: In view of MeM is currently not fully developed in the function, and the contents of the data information is limited by the information collected in the collection, processing errors may occur, the data is not entirely collected by the CreateON Studio, so the system of search / analysis The results are not responsible. The system does not assume any liability for any adverse consequences arising from the retrieval / analysis of the system as a basis for any commercial conduct or academic research.
+  ~ About privacy: MeM does not currently collect personal privacy other than geographic location information about the user during use.
+  ~ About copyright:
+  ~ 1. All works of MeM that indicate "Metro Master", "Metro Master", "CreateON", "CreateON Studio", "" are owned by CreateON Studio and MeM. Other media, companies, organizations, websites or individuals may not be reproduced in any form, nor distorted and tampered with the contents of the system.
+  ~ 2.MeM currently only granted to the Shanghai Fire Brigade special detachment of the new Jing squadron all, temporarily not granted any other units and personal use.
+  ~ 3. Units authorized by the system shall not exceed the scope of authorization.
+  ~ 4. The information provided by the system does not conform to the relevant paper text, subject to the paper text.
+  ~ 5. If you are in contact with MeM due to the contents of the work, copyright and other issues, please do so within 30 days after MeM has released the work.
+  ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,12 +22,7 @@
     tools:context="com.fmebicorp.beliyiet.metromastercognac.AboutActivity"
     tools:showIn="@layout/activity_about">
     
-    <ImageView
-        android:id="@+id/topphoto"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:src="@drawable/start_greeting"
-        android:layout_margin="16dp"/>
+
 
     <TextView
         android:id="@+id/texttop"
@@ -22,8 +31,7 @@
         android:text="Metro Master cognac 1.0
         \n地铁信息检索系统
         \n上海市消防总队 特勤支队 新泾中队地铁专业队"
-        android:gravity="center_horizontal"
-        android:layout_below="@id/topphoto"/>
+        android:gravity="center_horizontal" />
 
     <View
         android:id="@+id/line0"
@@ -71,8 +79,9 @@
         android:id="@+id/about_image"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:src="@drawable/create_on"
+        android:src="@drawable/co"
         android:layout_below="@id/about_text2"
+        android:padding="10dp"
         />
 
 </android.widget.RelativeLayout>

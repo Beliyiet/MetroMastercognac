@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ Copyright © 2017 FMEBI.Corp System and CreateON Studio. All rights reserved.
   ~ Before using all the features of Metro Master (hereinafter referred to as MeM), please be sure to read and thoroughly understand this statement. You may choose not to use MeM, but if you use it, your use will be deemed to be a recognition of the entire contents of this statement.
@@ -13,18 +12,11 @@
   ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SplashActivity"
-    android:background="#ffffff">
+<resources>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/start_greeting"
-        />
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw600dp devices (e.g. 7" tablets) here.
+    -->
 
-</RelativeLayout>
+</resources>

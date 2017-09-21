@@ -12,55 +12,51 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-apply plugin: 'com.android.application'
+package com.example.answer;
 
-android {
-    signingConfigs {
-        config {
-            keyAlias 'MetroMaster'
-            keyPassword '19971206'
-            storeFile file('D:/BELIYIET/MetroMaster.jks')
-            storePassword '19971206'
-        }
-    }
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
-    defaultConfig {
-        applicationId "com.fmebicorp.beliyiet.metromastercognac"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.1alpha_4000  "
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
-        }
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }
-}
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:cardview-v7:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.android.support:support-vector-drawable:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile files('libs/BaiduLBS_Android.jar')
-    compile 'junit:junit:4.12'
-    implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+import com.fmebicorp.beliyiet.metromastercognac.R;
+
+
+public class MainActivity extends Activity {
+	
+	private Button startBtn;
+	
+	private ImageView left;
+	private TextView title;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main2);
+        
+        left=(ImageView) findViewById(R.id.left);
+        title=(TextView) findViewById(R.id.title);
+        startBtn=(Button) findViewById(R.id.start);
+        
+        left.setVisibility(View.GONE);
+        title.setText("答题测试");
+        
+        startBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent=new Intent(MainActivity.this,AnalogyExaminationActivity.class);
+				startActivity(intent);
+			}
+		});
+        
+    }
+
+
 }

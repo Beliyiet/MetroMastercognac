@@ -12,55 +12,58 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-apply plugin: 'com.android.application'
+package com.example.answer.bean;
 
-android {
-    signingConfigs {
-        config {
-            keyAlias 'MetroMaster'
-            keyPassword '19971206'
-            storeFile file('D:/BELIYIET/MetroMaster.jks')
-            storePassword '19971206'
-        }
-    }
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
-    defaultConfig {
-        applicationId "com.fmebicorp.beliyiet.metromastercognac"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.1alpha_4000  "
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
-        }
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }
-}
+public class SaveQuestionInfo {
+	
+	private String questionId;//题目id
+	private String questionType;//题目类型
+	private String realAnswer;//题目答案
+	private String is_correct;//是否正确
+	private String score;//分值
+	
+	public String getQuestionId() {
+		return questionId;
+	}
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.2.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:cardview-v7:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.android.support:support-vector-drawable:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile files('libs/BaiduLBS_Android.jar')
-    compile 'junit:junit:4.12'
-    implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+	public void setQuestionId(String questionId) {
+		this.questionId = questionId;
+	}
+	
+	public String getQuestionType() {
+		return questionType;
+	}
+
+	public void setQuestionType(String questionType) {
+		this.questionType = questionType;
+	}
+
+	public String getRealAnswer() {
+		return realAnswer;
+	}
+
+	public void setRealAnswer(String realAnswer) {
+		this.realAnswer = realAnswer;
+	}
+
+	public String getIs_correct() {
+		return is_correct;
+	}
+
+	public void setIs_correct(String is_correct) {
+		this.is_correct = is_correct;
+	}
+
+	public String getScore() {
+		return score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
+	}
+
+	public String toString() {
+		return "{'question_id':'"+getQuestionId()+"','question_type':'"+getQuestionType()+"','realAnswer':'"+getRealAnswer()+"','is_correct':'"+getIs_correct()+"','score':'"+getScore()+"'}";
+	}
+	
 }

@@ -25,31 +25,46 @@ package com.fmebicorp.beliyiet.metromastercognac;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
+        import android.widget.ImageView;
         import android.widget.Toast;
 
         import com.baidu.location.LocationClient;
         import com.baidu.location.LocationClientOption;
         import com.baidu.mapapi.SDKInitializer;
         import com.baidu.mapapi.map.BaiduMap;
+        import com.baidu.mapapi.map.MapStatus;
+        import com.baidu.mapapi.map.MapStatusUpdate;
+        import com.baidu.mapapi.map.MapStatusUpdateFactory;
         import com.baidu.mapapi.map.MapView;
         import com.baidu.location.BDLocation;
         import com.baidu.location.BDLocationListener;
+        import com.baidu.mapapi.map.MyLocationData;
+        import com.baidu.mapapi.model.LatLng;
+        import com.baidu.mapapi.search.poi.PoiResult;
 
 
 public class MapActivity extends AppCompatActivity {
 
     MapView mMapview = null;
-    private String searchText = "";
+    PoiResult poiResult = null;//用于POI搜索返回结果
+    private String searchText = "";//用于-搜索-内容的全局变量，供传递使用。
+    private String navStart = "";//用于-导航：起始点-内容的全局变量，供传递使用。
+    private String navEnd = "";//用于-导航：目标点-内容的全局变量，供传递使用。
     private Button startLocation;
     private Button trafficLayer;
     private Button mapLayer;
     private Button searchButton;
+    private Button searchButton2;
     private LocationClient mLocationClient;
     public LocationService locationService;
     private LocationService LocationApplication;
     public Vibrator mVibrator;
     public BaiduMap mBaiduMap;
+    BDLocationListener locationListener;
 
+    BDLocationListener bdlocationListener = new MyLocationListener();
+    BDLocation location;
+    LocationClient client;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +76,24 @@ public class MapActivity extends AppCompatActivity {
         setContentView(R.layout.activity_map);
         mMapview = (MapView) findViewById(R.id.map);
         mBaiduMap = mMapview.getMap();
+
+        View child = mMapview.getChildAt(1);
+        if (child != null && (child instanceof ImageView)){
+            child.setVisibility(View.INVISIBLE);
+        }
+
+
+        ///设定地图起始中心点///
+        //LatLng cenpt = new LatLng(121.360997,31.226723);
+
+        //改变地图状态
+        client = new LocationClient(this);
+        client.registerLocationListener(bdlocationListener);
+        LocationClientOption locationClientOption = new LocationClientOption();
+        locationClientOption.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
+        locationClientOption.setScanSpan(1000);
+        client.setLocOption(locationClientOption);
+
 
         startLocation = (Button)findViewById(R.id.button_map_loc);
         mLocationClient = new LocationClient(this);
@@ -98,6 +131,9 @@ public class MapActivity extends AppCompatActivity {
                 Log.v("BaiduSdk", sb.toString());
             }
         });
+
+
+
 
         LocationClientOption option = new LocationClientOption();
         // 设置定位模式,一共三种模式，高精度（使用GPS、网络定位，精度最高），低功耗（仅使用网络定位），仅设备（仅使用GPS定位）
@@ -160,7 +196,6 @@ public class MapActivity extends AppCompatActivity {
 
 
         ///地点检索用 可输入型弹出框部分///
-        ///context:input_dialogbox.xml///
         searchButton = (Button)findViewById(R.id.button_map_search);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,10 +206,12 @@ public class MapActivity extends AppCompatActivity {
             final EditText input = new EditText(MapActivity.this);
             //指定输入类型
             input.setInputType(InputType.TYPE_CLASS_TEXT);
+
             builder.setView(input);
             //设定按钮
                 builder.setPositiveButton("搜索", new DialogInterface.OnClickListener() {
                     @Override
+
                     public void onClick(DialogInterface dialog, int which) {
                         searchText = input.getText().toString();
                     }
@@ -182,8 +219,41 @@ public class MapActivity extends AppCompatActivity {
                 builder.show();
             }
         });
+        ///地点检索用 可输入型弹出框部分///
+
+
+        searchButton2 = (Button)findViewById(R.id.button_map_nav);
+        searchButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
+                builder.setTitle("路线导航");
+                //设定输入
+                final EditText inputstart = new EditText(MapActivity.this);
+                final EditText inputend = new EditText(MapActivity.this);
+                //指定输入类型
+                inputstart.setInputType(InputType.TYPE_CLASS_TEXT);
+                inputend.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(inputstart);
+                builder.setView(inputend);
+                //设定按钮
+                builder.setPositiveButton("路径规划", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        searchText = inputstart.getText().toString();
+                        searchText = inputend.getText().toString();
+                    }
+                });
+                builder.show();
+            }
+        });
 
     }
+
+
+
+
+
 
 
 
@@ -230,6 +300,42 @@ public class MapActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         mMapview.onPause();
+    }
+
+
+
+
+
+    private class MyLocationListener implements BDLocationListener {
+
+        MapStatus mapStatus;
+        MyLocationData myLocationData;
+
+        @Override
+        public void onReceiveLocation(BDLocation bdLocation) {
+            location = bdLocation;
+            myLocationData = new MyLocationData.Builder()
+                    .accuracy(location.getRadius())
+                    .direction(location.getDirection())
+                    .latitude(location.getLatitude())
+                    .longitude(location.getLongitude())
+                    .build()
+            ;
+
+            mapStatus = new MapStatus.Builder()
+                .target(new LatLng(location.getLatitude(),
+                        location.getLongitude()))
+                        .zoom(18)
+                        .build();
+
+
+            mBaiduMap.setMyLocationData(myLocationData);
+            MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mapStatus);
+            mBaiduMap.setMapStatus(mapStatusUpdate);
+
+        }
+
+
     }
 }
 
