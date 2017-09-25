@@ -83,7 +83,7 @@ public class AnalogyExaminationActivity extends Activity {
 
 	Timer timer;
 	TimerTask timerTask;
-	int minute = 5;
+	int minute = 30;
 	int second = 0;
 
 	boolean isPause = false;
@@ -129,7 +129,7 @@ public class AnalogyExaminationActivity extends Activity {
 			if (minute < 2) {
 				right.setTextColor(Color.RED);
 			} else {
-				right.setTextColor(Color.WHITE);
+				right.setTextColor(Color.BLACK);
 			}
 			if (minute == 0) {
 				if (second == 0) {
@@ -226,7 +226,7 @@ public class AnalogyExaminationActivity extends Activity {
 		right = (TextView) findViewById(R.id.right);
 		titleTv.setText("模拟答题");
 		Drawable drawable1 = getBaseContext().getResources().getDrawable(
-				R.drawable.ic_practice_time);
+				R.drawable.time_24px);
 		drawable1.setBounds(0, 0, drawable1.getMinimumWidth(),
 				drawable1.getMinimumHeight());
 		right.setCompoundDrawables(drawable1, null, null, null);
@@ -424,9 +424,9 @@ public class AnalogyExaminationActivity extends Activity {
 		TextView title = (TextView) builder.findViewById(R.id.dialog_title);
 		TextView content = (TextView) builder.findViewById(R.id.dialog_content);
 		if (backtype.equals("0")) {
-			content.setText("您的答题时间结束,是否提交试卷?");
+			content.setText("答题时间结束,是否提交试卷?");
 		} else if(backtype.equals("1")){
-			content.setText("您要结束本次模拟答题吗？");
+			content.setText("结束本次模拟答题？");
 		}else{
 			content.setText(errorMsg+"");
 		}
@@ -437,7 +437,7 @@ public class AnalogyExaminationActivity extends Activity {
 			confirm_btn.setText("提交");
 			cancel_btn.setText("退出");
 		} else if(backtype.equals("1")){
-			confirm_btn.setText("退出");
+			confirm_btn.setText("放弃并退出");
 			cancel_btn.setText("继续答题");
 		}else{
 			confirm_btn.setText("确定");
@@ -485,13 +485,13 @@ public class AnalogyExaminationActivity extends Activity {
 	}
 	
 	
-	// 弹出对话框通知用户提交成功
+	// 弹出对话框通知提交成功
 	protected void showSubmitDialog() {
 		builderSubmit = new Dialog(this, R.style.dialog);
 		builderSubmit.setContentView(R.layout.my_dialog);
 		TextView title = (TextView) builderSubmit.findViewById(R.id.dialog_title);
 		TextView content = (TextView) builderSubmit.findViewById(R.id.dialog_content);
-		content.setText("提交成功，感谢您的参与!");
+		content.setText("试卷提交成功");
 		final Button confirm_btn = (Button) builderSubmit
 				.findViewById(R.id.dialog_sure);
 		confirm_btn.setVisibility(View.GONE);

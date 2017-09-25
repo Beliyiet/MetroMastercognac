@@ -14,10 +14,33 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-
+    
     <item
-        android:drawable="@drawable/btn_qx2"
-        android:state_pressed="true"/>
-    <item android:drawable="@drawable/btn_qx1"/>
+        android:state_pressed="true">
+        <shape>
+            <solid
+                android:color="#b92a3c"/>
+            <gradient
+                android:startColor="#b92a3c"
+                android:endColor="#b92a3c"
+                android:angle="270"></gradient>
+            <corners
+                android:radius="5dip"/>
+        </shape>
+    </item>
+    
+    <item
+        android:state_pressed="false">
+        <shape>
+            <solid
+                android:color="#FC3A52"/>
+            <gradient
+                android:startColor="#FC3A52"
+                android:endColor="#FC3A52"
+                android:angle="270"></gradient>
+        	<corners
+                android:radius="5dip"/>
+        </shape>
+    </item>
 
 </selector>

@@ -14,6 +14,8 @@
 
 package com.fmebicorp.beliyiet.metromastercognac;
 
+import android.view.View;
+
 /**
  * Created by BELIYIET on 2017/5/28.
  */
@@ -21,6 +23,7 @@ package com.fmebicorp.beliyiet.metromastercognac;
 public class CardView {
     private String name;
     private int imageId;
+    private View.OnClickListener onClickListener;
 
     public CardView(int imageId, String name) {
         this.imageId = imageId;
@@ -41,5 +44,9 @@ public class CardView {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
     }
 }

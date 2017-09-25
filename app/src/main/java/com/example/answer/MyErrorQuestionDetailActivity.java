@@ -30,8 +30,6 @@ import android.widget.TextView;
 
 /**
  * 错题详情
- * 
- * @author 金钟焕
  */
 public class MyErrorQuestionDetailActivity extends Activity {
 	

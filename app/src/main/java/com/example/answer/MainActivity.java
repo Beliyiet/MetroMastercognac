@@ -21,15 +21,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fmebicorp.beliyiet.metromastercognac.CardView;
 import com.fmebicorp.beliyiet.metromastercognac.R;
 
 
 public class MainActivity extends Activity {
 	
-	private Button startBtn;
+	private ImageButton startBut;
 	
 	private ImageView left;
 	private TextView title;
@@ -42,12 +44,12 @@ public class MainActivity extends Activity {
         
         left=(ImageView) findViewById(R.id.left);
         title=(TextView) findViewById(R.id.title);
-        startBtn=(Button) findViewById(R.id.start);
-        
+        startBut=(ImageButton) findViewById(R.id.start);
+
         left.setVisibility(View.GONE);
         title.setText("答题测试");
         
-        startBtn.setOnClickListener(new OnClickListener() {
+        startBut.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {

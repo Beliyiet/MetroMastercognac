@@ -12,12 +12,10 @@
   ~ 5. If you are in contact with MeM due to the contents of the work, copyright and other issues, please do so within 30 days after MeM has released the work.
   ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:drawable="@drawable/btn_qx2"
-        android:state_pressed="true"/>
-    <item android:drawable="@drawable/btn_qx1"/>
-
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#e7e7e7" />
+    <corners android:topLeftRadius="8dp"
+        android:topRightRadius="8dp"
+        android:bottomRightRadius="8dp"
+        android:bottomLeftRadius="8dp"/>
+</shape>

@@ -23,16 +23,19 @@ import com.example.answer.adapter.MyErrorQuestionListAdapter;
 import com.example.answer.bean.ErrorQuestion;
 import com.example.answer.bean.ErrorQuestionInfo;
 import com.example.answer.database.DBManager;
+import com.example.answer.AnalogyExaminationActivity;
 import com.fmebicorp.beliyiet.metromastercognac.R;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -40,13 +43,14 @@ import android.widget.Toast;
 
 /**
  * 我的错题
- * 
- * @author 金钟焕
+ *
  */
 public class MyErrorQuestionActivity extends Activity {
 
 	private ImageView left;
 	private TextView title;
+
+	public DBManager dbManager;
 
 	private List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();// 列表数据
 	private ListView listView;
@@ -65,6 +69,14 @@ public class MyErrorQuestionActivity extends Activity {
 		setContentView(R.layout.my_error_question);
 
 		initView();
+
+		FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab);
+		fab2.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View view) {
+			    ///
+			}
+		});
 	}
 
 	private void initView() {
