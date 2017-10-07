@@ -12,72 +12,14 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-package com.fmebicorp.beliyiet.metromastercognac;
+package com.loopeer.cardstack;
 
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Toast;
+public interface ScrollDelegate {
 
-import com.joanzapata.pdfview.PDFView;
-import com.joanzapata.pdfview.listener.OnDrawListener;
-import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
-import com.joanzapata.pdfview.listener.OnPageChangeListener;
+    void scrollViewTo(int x, int y);
+    void setViewScrollY(int y);
+    void setViewScrollX(int x);
+    int getViewScrollY();
+    int getViewScrollX();
 
-import java.io.File;
-
-public class PdfViewActivity extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener,OnDrawListener{
-
-    private PDFView pdfView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf_view);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        pdfView = (PDFView)findViewById(R.id.pdfView);
-        displayFromAssets("songHongStation.pdf");
-
-
-
-    }
-
-    private void displayFromAssets(String assetPDF) {
-        pdfView.fromAsset(assetPDF)
-                .defaultPage(1)
-                .onPageChange(this)
-                .onLoad(this)
-                .onDraw(this)
-                .showMinimap(false)
-                .swipeVertical(false)
-                .enableSwipe(true)
-                .load()
-        ;
-    }
-
-    /**
-     * 翻页回调
-     * @param page
-     * @param pageCount
-     */
-    @Override
-    public void onPageChanged(int page, int pageCount) {
-        Toast.makeText(PdfViewActivity.this,page+"/" + pageCount+"页", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void loadComplete(int nbPages) {
-
-    }
-
-    @Override
-    public void onLayerDrawn(Canvas canvas, float pageWidth, float pageHeight, int displayedPage) {
-
-    }
 }

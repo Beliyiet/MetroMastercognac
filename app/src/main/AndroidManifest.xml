@@ -81,7 +81,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StationActivity"
+            android:name="com.loopeer.test.cardstackview.StationActivity"
             android:label="线路"
             android:theme="@style/AppTheme" />
 

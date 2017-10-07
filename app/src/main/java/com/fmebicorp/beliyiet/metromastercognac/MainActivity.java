@@ -32,6 +32,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.loopeer.test.cardstackview.StationActivity;
+
 
 public class MainActivity extends AppCompatActivity
 implements NavigationView.OnNavigationItemSelectedListener {
@@ -174,7 +176,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
         int id = item.getItemId();
 
         if (id == R.id.nav_station) {
-            Intent intent = new Intent(MainActivity.this,StationActivity.class);
+            Intent intent = new Intent(MainActivity.this,com.loopeer.test.cardstackview.StationActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_info) {
@@ -199,7 +201,6 @@ implements NavigationView.OnNavigationItemSelectedListener {
             startActivity(intent7);
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

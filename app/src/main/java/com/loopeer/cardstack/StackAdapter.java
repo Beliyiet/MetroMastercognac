@@ -12,72 +12,61 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-package com.fmebicorp.beliyiet.metromastercognac;
+package com.loopeer.cardstack;
 
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Toast;
+import android.content.Context;
+import android.view.LayoutInflater;
 
-import com.joanzapata.pdfview.PDFView;
-import com.joanzapata.pdfview.listener.OnDrawListener;
-import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
-import com.joanzapata.pdfview.listener.OnPageChangeListener;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.io.File;
+public abstract class StackAdapter<T> extends CardStackView.Adapter<CardStackView.ViewHolder> {
 
-public class PdfViewActivity extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener,OnDrawListener{
+    private final Context mContext;
+    private final LayoutInflater mInflater;
+    private List<T> mData;
 
-    private PDFView pdfView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf_view);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        pdfView = (PDFView)findViewById(R.id.pdfView);
-        displayFromAssets("songHongStation.pdf");
-
-
-
+    public StackAdapter(Context context) {
+        this.mContext = context;
+        this.mInflater = LayoutInflater.from(context);
+        this.mData = new ArrayList();
     }
 
-    private void displayFromAssets(String assetPDF) {
-        pdfView.fromAsset(assetPDF)
-                .defaultPage(1)
-                .onPageChange(this)
-                .onLoad(this)
-                .onDraw(this)
-                .showMinimap(false)
-                .swipeVertical(false)
-                .enableSwipe(true)
-                .load()
-        ;
+    public void updateData(List<T> data) {
+        this.setData(data);
+        this.notifyDataSetChanged();
     }
 
-    /**
-     * 翻页回调
-     * @param page
-     * @param pageCount
-     */
-    @Override
-    public void onPageChanged(int page, int pageCount) {
-        Toast.makeText(PdfViewActivity.this,page+"/" + pageCount+"页", Toast.LENGTH_SHORT).show();
+    public void setData(List<T> data) {
+        this.mData.clear();
+        if (data != null) {
+            this.mData.addAll(data);
+        }
+    }
 
+    public LayoutInflater getLayoutInflater() {
+        return this.mInflater;
+    }
+
+    public Context getContext() {
+        return this.mContext;
     }
 
     @Override
-    public void loadComplete(int nbPages) {
-
+    public void onBindViewHolder(CardStackView.ViewHolder holder, int position) {
+        T data = this.getItem(position);
+        this.bindView(data, position, holder);
     }
+
+    public abstract void bindView(T data, int position, CardStackView.ViewHolder holder);
 
     @Override
-    public void onLayerDrawn(Canvas canvas, float pageWidth, float pageHeight, int displayedPage) {
-
+    public int getItemCount() {
+        return mData.size();
     }
+
+    public T getItem(int position) {
+        return this.mData.get(position);
+    }
+
 }

@@ -44,4 +44,32 @@
     <color name="lucky_text_black">#2e2e2e</color>
     <color name="lucky_text_red">#e43b1c</color>
     <color name="black38_text">#383838</color>
+
+    <color name="color_1">#E3022E</color>
+    <color name="color_2">#8BC121</color>
+    <color name="color_3">#FBD601</color>
+    <color name="color_4">#461D85</color>
+    <color name="color_5">#944B9C</color>
+    <color name="color_6">#D40068</color>
+    <color name="color_7">#ED6D00</color>
+    <color name="color_8">#0393D9</color>
+    <color name="color_9">#88CAED</color>
+    <color name="color_10">#C7ADD2</color>
+    <color name="color_11">#891A2B</color>
+    <color name="color_12">#007A61</color>
+    <color name="color_13">#E799C0</color>
+    <color name="color_14">#97D2C0</color>
+    <color name="color_15">#26A69A</color>
+    <color name="color_16">#4CAF50</color>
+    <color name="color_17">#8BC34A</color>
+    <color name="color_18">#CDDC39</color>
+    <color name="color_19">#FFEB3B</color>
+    <color name="color_20">#FFC107</color>
+    <color name="color_21">#FF9800</color>
+    <color name="color_22">#FF5722</color>
+    <color name="color_23">#795548</color>
+    <color name="color_24">#9E9E9E</color>
+    <color name="color_25">#607D8B</color>
+    <color name="color_26">#000000</color>
+
 </resources>

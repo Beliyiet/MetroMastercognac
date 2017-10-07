@@ -200,4 +200,9 @@
     <string name="title_activity_plan">预案资料</string>
     <string name="title_activity_pdfview">预案资料</string>
     <string name="title_activity_pdf_view">PdfViewActivity</string>
+
+    <string name="menu_action_all_down">All down</string>
+    <string name="menu_action_up_down">Up down</string>
+    <string name="menu_action_up_down_stack">Up down stack</string>
+
 </resources>

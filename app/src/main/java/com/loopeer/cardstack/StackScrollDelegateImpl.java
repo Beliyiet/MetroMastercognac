@@ -12,44 +12,69 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-package com.fmebicorp.beliyiet.metromastercognac;
+package com.loopeer.cardstack;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ListView;
-import android.widget.ArrayAdapter;
 
-public class StationActivity extends AppCompatActivity {
+public class StackScrollDelegateImpl implements ScrollDelegate{
 
-    private static final String[] strs = new String[] {
-            "1号线", "2号线", "2号线东延伸段","3号线", "4号线", "5号线","6号线","7号线","8号线","9号线","磁浮线","10号线(新江湾城-航中路)","10号线(新江湾城-虹桥火车站)","11号线(嘉定北-迪士尼)","11号线(花桥-三林)","12号线","16号线"
-    };
-    private ListView listView;
+    private CardStackView mCardStackView;
+    private int mScrollY;
+    private int mScrollX;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_station);
-        setContentView(R.layout.activity_station);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "查看线路图", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        listView = (ListView) findViewById(R.id.station_list);
-        listView.setAdapter((new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, strs)));
-
+    public StackScrollDelegateImpl(CardStackView cardStackView) {
+        mCardStackView = cardStackView;
     }
 
+    private void updateChildPos() {
+        for (int i = 0; i < mCardStackView.getChildCount(); i++) {
+            View view = mCardStackView.getChildAt(i);
+            if (view.getTop() - mScrollY < mCardStackView.getChildAt(0).getY()) {
+                view.setTranslationY(mCardStackView.getChildAt(0).getY() - view.getTop());
+            } else if (view.getTop() - mScrollY > view.getTop()) {
+                view.setTranslationY(0);
+            } else {
+                view.setTranslationY(-mScrollY);
+            }
+        }
+    }
+
+    @Override
+    public void scrollViewTo(int x, int y) {
+        x = clamp(x, mCardStackView.getWidth() - mCardStackView.getPaddingRight() - mCardStackView.getPaddingLeft(), mCardStackView.getWidth());
+        y = clamp(y, mCardStackView.getShowHeight(), mCardStackView.getTotalLength());
+        mScrollY = y;
+        mScrollX = x;
+        updateChildPos();
+    }
+
+    private static int clamp(int n, int my, int child) {
+        if (my >= child || n < 0) {
+            return 0;
+        }
+        if ((my + n) > child) {
+            return child - my;
+        }
+        return n;
+    }
+
+    @Override
+    public void setViewScrollY(int y) {
+        scrollViewTo(mScrollX, y);
+    }
+
+    @Override
+    public void setViewScrollX(int x) {
+        scrollViewTo(x, mScrollY);
+    }
+
+    @Override
+    public int getViewScrollY() {
+        return mScrollY;
+    }
+
+    @Override
+    public int getViewScrollX() {
+        return mScrollX;
+    }
 }
