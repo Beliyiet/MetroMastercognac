@@ -21,12 +21,12 @@
     <color name="colorLine8">#df3336</color>
 
     <color name="white">#FFFFFFFF</color>
-    <color name="main_bg">#288df5</color>
-    <color name="menu_bottom_bg">#288df5</color>
+    <color name="main_bg">#fc3a52</color>
+    <color name="menu_bottom_bg">#0e2431</color>
     <color name="menu_bottom_text">#f2f8ff</color>
     <color name="info_black_text">#181818</color>
     <color name="info_gray_text">#979797</color>
-    <color name="info_blue_text">#3993f3</color>
+    <color name="info_blue_text">#f9b248</color>
     <color name="info_layout_bg">#eaeaea</color>
     <color name="info_honorroll_item_text">#1b1b1b</color>
     <color name="view_manager">#e3e3e3</color>
@@ -37,7 +37,7 @@
     <color name="practice_test_result_text">#9a9a9a</color>
     <color name="practice_test_result_right_text">#61bc31</color>
     <color name="practice_test_result_wrong_text">#d53235</color>
-    <color name="practice_test_result_statistics_text">#2991f4</color>
+    <color name="practice_test_result_statistics_text">#fc3a52</color>
     <color name="practice_test_result_detail_text">#ab8b28</color>
     <color name="my_error_question_text_black">#333333</color>
     <color name="lucky_text_redtop">#e33b20</color>

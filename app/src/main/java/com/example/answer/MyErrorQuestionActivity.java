@@ -50,8 +50,6 @@ public class MyErrorQuestionActivity extends Activity {
 	private ImageView left;
 	private TextView title;
 
-	public DBManager dbManager;
-
 	private List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();// 列表数据
 	private ListView listView;
 	

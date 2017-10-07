@@ -48,8 +48,7 @@ public class StationActivity extends AppCompatActivity {
         });
 
         listView = (ListView) findViewById(R.id.station_list);
-        listView.setAdapter((new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, strs)));
+        listView.setAdapter((new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, strs)));
 
     }
 

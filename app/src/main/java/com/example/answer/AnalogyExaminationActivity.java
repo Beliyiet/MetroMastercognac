@@ -214,7 +214,7 @@ public class AnalogyExaminationActivity extends Activity {
 		ErrorQuestionInfo[] errorQuestionInfos = dbManager.queryAllData();
 		if (errorQuestionInfos != null) {
 			// 删除上次保存的我的错题
-			int colunm = (int) dbManager.deleteAllData();
+			//int colunm = (int) dbManager.deleteAllData();
 		}
 
 
@@ -303,7 +303,7 @@ public class AnalogyExaminationActivity extends Activity {
 
 	/**
 	 * @param index
-	 *            根据索引值切换页面
+	 *根据索引值切换页面
 	 */
 	public void setCurrentView(int index) {
 		viewPager.setCurrentItem(index);

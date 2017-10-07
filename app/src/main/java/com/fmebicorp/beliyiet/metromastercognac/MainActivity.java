@@ -66,7 +66,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view2) {
-                Intent intent2 = new Intent(MainActivity.this,CombatInformationActivity.class);
+                Intent intent2 = new Intent(MainActivity.this,PdfViewActivity.class);
                 startActivity(intent2);
             }
         });
@@ -91,6 +91,15 @@ implements NavigationView.OnNavigationItemSelectedListener {
             }
         });
 
+        //主界面项目点击事件:考试系统
+        Button button5  = (Button)findViewById(R.id.main_content_button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view4) {
+
+            }
+        });
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -110,6 +119,16 @@ implements NavigationView.OnNavigationItemSelectedListener {
                 case R.id.main_content_button2:
             }
         }
+
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        super.onPostCreate(savedInstanceState);
+        //Toolbar 必须在onCreate()之后设置标题文本，否则默认标签将覆盖我们的设置
+        if (toolbar != null) {//mActionBarToolbar就是android.support.v7.widget.Toolbar
+            toolbar.setTitle("");//设置为空，可以自己定义一个居中的控件，当做标题控件使用
+        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -159,6 +178,8 @@ implements NavigationView.OnNavigationItemSelectedListener {
             startActivity(intent);
 
         } else if (id == R.id.nav_info) {
+            Intent intent = new Intent(MainActivity.this,Plan.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_map) {
             Intent intent = new Intent(MainActivity.this,MapActivity.class);

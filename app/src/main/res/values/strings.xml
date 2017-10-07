@@ -197,4 +197,7 @@
     <string name="title_activity_map">MapActivity</string>
     <string name="title_activity_test_main">考试系统</string>
     <string name="title_activity_analogy_examination">AnalogyExaminationActivity</string>
+    <string name="title_activity_plan">预案资料</string>
+    <string name="title_activity_pdfview">预案资料</string>
+    <string name="title_activity_pdf_view">PdfViewActivity</string>
 </resources>

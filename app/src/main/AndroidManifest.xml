@@ -99,37 +99,24 @@
             android:label="@string/title_activity_map"
             android:theme="@style/AppTheme" />
         <activity android:name=".StationInformation" />
-
         <activity
             android:name="com.example.answer.MainActivity"
-            android:label="@string/app_name" >
-        </activity>
-
+            android:label="@string/app_name" />
         <activity
             android:name="com.example.answer.AnalogyExaminationActivity"
             android:configChanges="keyboardHidden|navigation|orientation"
             android:label="@string/app_name"
-            android:launchMode="singleTop">
-        </activity>
-
+            android:launchMode="singleTop" />
         <activity
             android:name="com.example.answer.MyErrorQuestionActivity"
             android:configChanges="keyboardHidden|navigation|orientation"
             android:label="@string/app_name"
-            android:launchMode="singleTop">
-        </activity>
-
+            android:launchMode="singleTop" />
         <activity
             android:name="com.example.answer.MyErrorQuestionDetailActivity"
             android:configChanges="keyboardHidden|navigation|orientation"
             android:label="@string/app_name"
-            android:launchMode="singleTop">
-        </activity>
-
-
-
-
-
+            android:launchMode="singleTop" />
 
         <service
             android:name="com.baidu.location.f"
@@ -139,6 +126,16 @@
                 <action android:name="com.baidu.location.service_v2.2" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".Plan"
+            android:label="@string/title_activity_plan"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PdfViewActivity"
+            android:label="预案资料"
+            android:theme="@style/AppTheme">
+        </activity>
 
     </application>
 

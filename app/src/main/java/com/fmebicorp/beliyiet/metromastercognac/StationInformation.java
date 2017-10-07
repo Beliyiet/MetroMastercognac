@@ -28,24 +28,6 @@ public class StationInformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_station_information);
 
-        try {
-            //返回一个实例应用程序的包
-            InputStream info = getAssets().open("data_songhong.txt");
-            int size = info.available();
-            //加载整个asset到本地的字节缓冲区
-            byte[] buffer = new byte[size];
-            info.read(buffer);
-            info.close();
-            //将缓冲buffer转为字符串
-            String text =new String(buffer,"UTF-8");
-            //将介个字符串传入textview。
-            TextView textView = (TextView) findViewById(R.id.text);
-            textView.setText(size);
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 
