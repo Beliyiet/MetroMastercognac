@@ -12,66 +12,43 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-package com.example.answer;
+package com.example.answer.util;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
-import android.view.View;
-import android.view.Window;
-import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.example.answer.util.TestList;
-import com.fmebicorp.beliyiet.metromastercognac.CardView;
-import com.fmebicorp.beliyiet.metromastercognac.R;
+/**
+ * Created by BELIYIET on 2017/11/9.
+ */
 
+public class TestList {
 
-public class MainActivity extends Activity {
-	
-	private ImageButton startBut;
-	
-	private ImageView left;
-	private TextView title;
+    private String name;
+    private String id;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main2);
-        
-        left=(ImageView) findViewById(R.id.left);
-        title=(TextView) findViewById(R.id.title);
-        startBut=(ImageButton) findViewById(R.id.start);
-
-        left.setVisibility(View.GONE);
-        title.setText("答题测试");
-
-    //列表部分//
-        //Initialize Adapter//
-//        ArrayAdapter<String> testlistAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, TestList.getAllTestList());
-        //get ListView by ID//
-//        ListView listView = (ListView)findViewById(R.id.test_listview);
-        //set Adapter for ListView//
-//        listView.setAdapter(testlistAdapter);
-
-
-        
-        startBut.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Intent intent=new Intent(MainActivity.this,AnalogyExaminationActivity.class);
-				startActivity(intent);
-			}
-		});
-        
+//CONSTRUCT FUNCTION//
+    public TestList(String name,String id) {
+        this.name = name;
+        this.id = id;
     }
 
+//RETURN LIST OF TEACHER//
+    public static List<String> getAllTestList() {
+        List<String> testlist = new ArrayList<String>();
+        testlist.add("地铁攻坚专业队理论测试题（一）");
+        testlist.add("地铁攻坚专业队理论测试题（二）");
+        testlist.add("地铁攻坚专业队理论测试题（三）");
+        testlist.add("地铁攻坚专业队理论测试题（四）");
+        testlist.add("地铁攻坚专业队理论测试题（五）");
+        testlist.add("地铁攻坚专业队理论测试题（六）");
+        testlist.add("地铁攻坚专业队理论测试题（七）");
+        testlist.add("地铁攻坚专业队理论测试题（八）");
+        testlist.add("地铁攻坚专业队理论测试题（九）");
+        testlist.add("地铁攻坚专业队理论测试题（十）");
 
+
+
+        return testlist;
+
+    }
 }

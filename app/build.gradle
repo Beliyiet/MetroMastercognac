@@ -43,6 +43,8 @@ android {
             signingConfig signingConfigs.config
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
@@ -63,5 +65,5 @@ dependencies {
     compile files('libs/BaiduLBS_Android.jar')
     compile 'junit:junit:4.12'
     implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+    compile 'com.github.barteksc:android-pdf-viewer:2.7.0'
 }

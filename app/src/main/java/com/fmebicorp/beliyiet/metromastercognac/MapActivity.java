@@ -14,7 +14,10 @@
 
 package com.fmebicorp.beliyiet.metromastercognac;
 
+        import android.content.BroadcastReceiver;
+        import android.content.Context;
         import android.content.DialogInterface;
+        import android.content.Intent;
         import android.os.Bundle;
         import android.os.Vibrator;
         import android.support.v7.app.AlertDialog;
@@ -280,7 +283,17 @@ public class MapActivity extends AppCompatActivity {
     }
 */
 
+    public class SDKReceiver extends BroadcastReceiver{
 
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (
+                    action.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR)
+                    );
+
+        }
+    }
 
     @Override
     protected void onDestroy() {

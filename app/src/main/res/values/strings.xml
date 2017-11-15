@@ -204,5 +204,9 @@
     <string name="menu_action_all_down">All down</string>
     <string name="menu_action_up_down">Up down</string>
     <string name="menu_action_up_down_stack">Up down stack</string>
+    <string name="title_activity_pdflist">PDFListActivity</string>
+    <string name="title_activity_station_information">StationInformation</string>
+    <string name="title_activity_zsgy">ZSGY</string>
+    <string name="title_activity_online_test">OnlineTest</string>
 
 </resources>

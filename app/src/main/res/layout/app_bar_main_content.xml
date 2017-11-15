@@ -52,7 +52,7 @@
             android:id="@+id/main_content_button4"
             android:layout_span="1"
             android:onClick="onclick"
-            android:text="作战编程"/>
+            android:text="作战信息"/>
     </TableRow>
     <TableRow
         android:layout_margin="4dp">

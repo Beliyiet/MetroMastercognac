@@ -17,8 +17,6 @@ package com.fmebicorp.beliyiet.metromastercognac;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -32,6 +30,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.fmebicorp.beliyiet.metromastercognac.onlinetest.OnlineTest;
+import com.fmebicorp.beliyiet.metromastercognac.pdfStation.ZSGY;
 import com.loopeer.test.cardstackview.StationActivity;
 
 
@@ -45,30 +45,21 @@ implements NavigationView.OnNavigationItemSelectedListener {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "", Snackbar.LENGTH_SHORT)
-                        .setAction("Action", null).show();
-            }
-        });
 
         //主界面项目点击事件:实战资料速查
         Button button  = (Button)findViewById(R.id.main_content_button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,StationInformation.class);
-                startActivity(intent);
+
             }
         });
-        //主界面项目点击事件:作战编程
+        //主界面项目点击事件:作战信息
         Button button2  = (Button)findViewById(R.id.main_content_button4);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view2) {
-                Intent intent2 = new Intent(MainActivity.this,PdfViewActivity.class);
+                Intent intent2 = new Intent(MainActivity.this,ZSGY.class);
                 startActivity(intent2);
             }
         });
@@ -93,12 +84,13 @@ implements NavigationView.OnNavigationItemSelectedListener {
             }
         });
 
-        //主界面项目点击事件:考试系统
+        //主界面项目点击事件:
         Button button5  = (Button)findViewById(R.id.main_content_button5);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view4) {
-
+                Intent intent4 = new Intent(MainActivity.this,OnlineTest.class);
+                startActivity(intent4);
             }
         });
 
@@ -115,8 +107,8 @@ implements NavigationView.OnNavigationItemSelectedListener {
             int id = view2.getId();
             switch (id) {
                 case R.id.main_content_button1:
-                    Intent intent = new Intent(MainActivity.this, CombatInformationActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(MainActivity.this, CombatInformationActivity.class);
+                    //startActivity(intent);
                     break;
                 case R.id.main_content_button2:
             }
@@ -176,12 +168,12 @@ implements NavigationView.OnNavigationItemSelectedListener {
         int id = item.getItemId();
 
         if (id == R.id.nav_station) {
-            Intent intent = new Intent(MainActivity.this,com.loopeer.test.cardstackview.StationActivity.class);
+            Intent intent = new Intent(MainActivity.this,StationActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_info) {
-            Intent intent = new Intent(MainActivity.this,Plan.class);
-            startActivity(intent);
+            //Intent intent = new Intent(MainActivity.this,Plan.class);
+            //startActivity(intent);
 
         } else if (id == R.id.nav_map) {
             Intent intent = new Intent(MainActivity.this,MapActivity.class);

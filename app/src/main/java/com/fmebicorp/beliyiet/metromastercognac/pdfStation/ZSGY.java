@@ -12,8 +12,9 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-package com.fmebicorp.beliyiet.metromastercognac;
+package com.fmebicorp.beliyiet.metromastercognac.pdfStation;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,12 +22,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class StationMapActivity extends AppCompatActivity {
+import com.fmebicorp.beliyiet.metromastercognac.R;
+import com.github.barteksc.pdfviewer.PDFView;
 
+public class ZSGY extends AppCompatActivity {
+
+    PDFView pdfView;
+
+    @SuppressLint("ResourceTyp2e")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_station_map);
+        setContentView(R.layout.activity_zsgy);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -38,6 +45,11 @@ public class StationMapActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        setContentView(R.layout.content_zsgy);
+        pdfView = (PDFView)findViewById(R.id.pdfview);
+        pdfView.fromAsset("zhongshangongyuan.pdf")
+                .load();
     }
 
 }

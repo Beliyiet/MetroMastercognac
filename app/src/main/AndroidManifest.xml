@@ -56,10 +56,6 @@
             android:label="设置"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".dongfangActivity"
-            android:label="东方体育中心"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".ToolsActivity"
             android:label="工具组"
             android:theme="@style/AppTheme" />
@@ -91,14 +87,9 @@
             //Beliyiet申请的key~ 查这个鬼东西真是折腾死了！！！</meta-data>
 
         <activity
-            android:name=".CombatInformationActivity"
-            android:label="@string/title_activity_combat_information"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".MapActivity"
             android:label="@string/title_activity_map"
             android:theme="@style/AppTheme" />
-        <activity android:name=".StationInformation" />
         <activity
             android:name="com.example.answer.MainActivity"
             android:label="@string/app_name" />
@@ -128,15 +119,17 @@
         </service>
 
         <activity
-            android:name=".Plan"
-            android:label="@string/title_activity_plan"
+            android:name=".StationInformation"
+            android:label="@string/title_activity_station_information"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".PdfViewActivity"
-            android:label="预案资料"
-            android:theme="@style/AppTheme">
-        </activity>
-
+            android:name=".pdfStation.ZSGY"
+            android:label="@string/title_activity_zsgy"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".onlinetest.OnlineTest"
+            android:label="@string/title_activity_online_test"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

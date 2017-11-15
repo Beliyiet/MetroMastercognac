@@ -12,96 +12,47 @@
  * The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
  ******************************************************************************/
 
-package com.fmebicorp.beliyiet.metromastercognac;
+package com.fmebicorp.beliyiet.metromastercognac.onlinetest;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
+import com.fmebicorp.beliyiet.metromastercognac.R;
 
-public class Plan extends AppCompatActivity{
+public class OnlineTest extends AppCompatActivity {
 
-    private static final String[] strs2 = new String[] {
-            "二号线 淞虹路站","1.2.8人民广场站","北新泾站"
-    };
-    private ListView listView2;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plan);
+        setContentView(R.layout.activity_online_test);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        webView = (WebView) findViewById(R.id.onlineTestWeb);
 
-        listView2 = (ListView) findViewById(R.id.list_plan2);
-        ArrayAdapter<String> MyAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,strs2);
-        listView2.setAdapter(MyAdapter);
-        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int item, long id) {
-
-            }
-        });
+        webView.loadUrl("https://51321.acmcoder.com/cand/public?q=NWEwYzQ0YWI4ZGY0ZGUyNDM4MTlhNWJiJiY1YTBjNDQzNzliNTM5NTI0M2U1M2M3OGMmJjUxMzIx");
+        webView.canGoBack();
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.requestFocus();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                webView.goBack();
             }
         });
-    }
 
-
-    class MyAdapter extends BaseAdapter{
-
-        @Override
-        public int getCount() {
-            return strs2.length;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return strs2[position];
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertview, ViewGroup viewGroup) {
-            ViewHolder viewHolder = new ViewHolder();
-            if (convertview == null){
-                convertview = getLayoutInflater().inflate(R.layout.activity_plan,null);
-                viewHolder.textView = (TextView)convertview.findViewById(R.id.list_plan2);
-                convertview.setTag(viewHolder);
-            }else {
-                viewHolder = (ViewHolder)convertview.getTag();
-            }
-            viewHolder.textView.setText(strs2[position]);
-            return convertview;
-        }
-
-
-    }
-
-    static class ViewHolder{
-        TextView textView;
     }
 
 }
