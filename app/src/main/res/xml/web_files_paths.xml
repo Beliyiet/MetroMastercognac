@@ -13,20 +13,11 @@
   ~ The right to interpret the system: the declaration of the system and its modification, renewal and final interpretation are owned by CreateON Studio and MeM.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.fmebicorp.beliyiet.metromastercognac.onlinetest.OnlineTest"
-    tools:showIn="@layout/activity_online_test">
+<paths>
 
-    <WebView
-        android:id="@+id/onlineTestWeb"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+    <external-cache-path
+        name="agenweb_files"
+        path="agentweb-cache"/>
 
-</LinearLayout>
+
+</paths>

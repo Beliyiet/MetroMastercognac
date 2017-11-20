@@ -72,4 +72,12 @@
     <color name="color_25">#607D8B</color>
     <color name="color_26">#000000</color>
 
+    <color name="color_picker_border_color">#B0B0B0</color>
+    <color name="color_picker_background_color">#FFFFFF</color>
+    <color name="dropdown_divider_color">#E5E5E5</color>
+    <color name="dropdown_dark_divider_color">#C0C0C0</color>
+
+    <color name="black">#000000</color>
+    <color name="select_color">#2e2e32</color>
+
 </resources>

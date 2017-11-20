@@ -14,45 +14,60 @@
 
 package com.fmebicorp.beliyiet.metromastercognac.onlinetest;
 
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 
 import com.fmebicorp.beliyiet.metromastercognac.R;
 
-public class OnlineTest extends AppCompatActivity {
+import org.xwalk.core.XWalkActivity;
+import org.xwalk.core.XWalkPreferences;
+import org.xwalk.core.XWalkView;
 
-    private WebView webView;
+public class Web extends Activity {
+
+    XWalkView xWalkWebView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_online_test);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.content_wap);
 
-        webView = (WebView) findViewById(R.id.onlineTestWeb);
-
-        webView.loadUrl("https://51321.acmcoder.com/cand/public?q=NWEwYzQ0YWI4ZGY0ZGUyNDM4MTlhNWJiJiY1YTBjNDQzNzliNTM5NTI0M2U1M2M3OGMmJjUxMzIx");
-        webView.canGoBack();
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.requestFocus();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                webView.goBack();
-            }
-        });
-
+        xWalkWebView = (XWalkView)findViewById(R.id.xwalkWebView);
+        xWalkWebView.load("https://crosswalk-project.org", null);
     }
+
+/*
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (xWalkWebView != null) {
+            xWalkWebView.pauseTimers();
+            xWalkWebView.onHide();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (xWalkWebView != null) {
+
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (xWalkWebView != null) {
+            xWalkWebView.onDestroy();
+        }
+    }
+*/
 
 }

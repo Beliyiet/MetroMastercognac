@@ -207,6 +207,7 @@
     <string name="title_activity_pdflist">PDFListActivity</string>
     <string name="title_activity_station_information">StationInformation</string>
     <string name="title_activity_zsgy">ZSGY</string>
-    <string name="title_activity_online_test">OnlineTest</string>
+    <string name="title_activity_online_test">在线测试</string>
+    <string name="title_activity_wap">Wap</string>
 
 </resources>

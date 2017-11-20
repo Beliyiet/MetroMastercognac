@@ -30,7 +30,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.fmebicorp.beliyiet.metromastercognac.onlinetest.OnlineTest;
+import com.fmebicorp.beliyiet.metromastercognac.onlinetest.Web;
 import com.fmebicorp.beliyiet.metromastercognac.pdfStation.ZSGY;
 import com.loopeer.test.cardstackview.StationActivity;
 
@@ -89,7 +89,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view4) {
-                Intent intent4 = new Intent(MainActivity.this,OnlineTest.class);
+                Intent intent4 = new Intent(MainActivity.this,Web.class);
                 startActivity(intent4);
             }
         });
